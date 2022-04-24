@@ -18,7 +18,7 @@ const App = () => {
     ];
 
     return (
-        <div>
+        <div className='ui container' style={{ marginTop: '15px' }}>
             <Accordion items={items} />
         </div>
     )

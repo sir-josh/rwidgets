@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const Accordion = ({items}) => {
-  return <h1>{items.length}</h1>
+    const renderedList = items.map((item, i) =>{
+        return <Fragment key={`accordion ${i}`}>
+                    <div className='title active'>
+                        {item.title}
+                        <i className='dropdown icon'></i>
+                    </div>
+                    <div className='content active'>
+                        <p>{item.content}</p>
+                    </div>
+                </Fragment>
+    });
+
+  return <div className='ui styled accordion'>{renderedList}</div>
 
 }
 
