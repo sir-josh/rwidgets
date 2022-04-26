@@ -21,7 +21,10 @@ const Search = () => {
             setResults(data.query.search);
         }
 
-        searchWiki();
+        if (term) {
+            searchWiki();
+        }
+        
     }, [term]);
 
     const renderedResult = results.map(result => {
