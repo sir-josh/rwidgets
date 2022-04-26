@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 const Search = () => {
     const [term, setTerm] = useState('programming');
     const [results, setResults] = useState([]);
@@ -24,11 +25,16 @@ const Search = () => {
     }, [term]);
 
     const renderedResult = results.map(result => {
+        const regex = /(<([^>]+)>)/gi;  //NEW
+        const cleanSnippet = result.snippet.replace(regex, ""); //NEW 
+        // {result.snippet} was replaced with {cleanSnippet}
+        
         return(
             <div key={result.pageid} className='item'>
-                <div className='content'>
-                    <div className='header'> {result.title}</div>
-                    {result.snippet}
+                <div className='content' style={{ paddingTop: '15px', paddingBottom: '15px'}}>
+                    <div className='header' style={{ marginBottom: '8px'}}> {result.title}</div> 
+                    {/* <span dangerouslySetInnerHTML={{__html:result.snippet}}></span> */}
+                    {cleanSnippet}
                 </div>
             </div>
         );
