@@ -25,7 +25,7 @@ const Search = () => {
     }, [term]);
 
     const renderedResult = results.map(result => {
-        const regex = /(<([^>]+)>)/gi;  //NEW
+        const regex = /(<([^>]+)>)|(&quot;)/gi //NEW
         const cleanSnippet = result.snippet.replace(regex, ""); //NEW 
         // {result.snippet} was replaced with {cleanSnippet}
 
