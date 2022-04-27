@@ -6,7 +6,7 @@ const Dropdown = ({options, selected, onSelectChange}) => {
     const renderOptions = options.map(option=>{
         return(
             <div 
-                className='item' 
+                className={`item ${option.value === selected.value ? 'selected active': null}` }
                 key={option.value}
                 onClick={()=>onSelectChange(option)} 
             >
