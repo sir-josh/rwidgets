@@ -16,7 +16,7 @@ const languageOptions = [
     }
 ];
 
-const divLabel = 'Choose language option';
+const divLabel = 'Choose Language Option';
 
 const Translate = () => {
     const [language, setLanguage] = useState(languageOptions[0]);
