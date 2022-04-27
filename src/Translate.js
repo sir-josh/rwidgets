@@ -16,8 +16,6 @@ const languageOptions = [
     }
 ];
 
-const divLabel = 'Choose Language Option';
-
 const Translate = () => {
     const [language, setLanguage] = useState(languageOptions[0]);
 
@@ -26,7 +24,7 @@ const Translate = () => {
             options={languageOptions}
             selected={language}
             onSelectChange={setLanguage}
-            topLabel={divLabel}
+            topLabel="Choose Language Option"
         />
     );
 }
