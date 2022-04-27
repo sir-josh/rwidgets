@@ -33,6 +33,8 @@ const options = [
     },
 ];
 
+const dropdownLabel = 'Select a color';
+
 const App = () => {
     const [selected, setSelected] = useState(options[0]);
 
@@ -43,6 +45,7 @@ const App = () => {
                 selected={selected}
                 onSelectChange={setSelected}
                 options={options}
+                topLabel={dropdownLabel}
             />
         </div>
     )
