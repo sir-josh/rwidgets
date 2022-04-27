@@ -21,15 +21,15 @@ const App = () => {
 
     const options = [
         {
-            label: "The color is red",
+            label: "The Color Red",
             value: "red"
         },
         {
-            label: "The color is green",
+            label: "The Color Green",
             value: "green"
         },
         {
-            label: "The color is shade of blue",
+            label: "A Shade of Blue",
             value: "blue"
         },
     ];
