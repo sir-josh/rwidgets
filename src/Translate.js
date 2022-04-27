@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Dropdown from './components/Dropdown';
 
+const APIKEY = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM';
+
 const languageOptions = [
     {
         label: 'Afrikaans',
@@ -13,7 +15,20 @@ const languageOptions = [
     {
         label: 'Hindi',
         value: 'hi'
+    },
+    {
+        label: 'French',
+        value: 'fr'
+    },
+    {
+        label: 'German',
+        value: 'de'
+    },
+    {
+        label: 'Chinese(Simplified)',
+        value: 'zh-CN'
     }
+
 ];
 
 const Translate = () => {
