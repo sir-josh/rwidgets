@@ -4,9 +4,21 @@ import axios from 'axios';
 
 const Search = () => {
     const [term, setTerm] = useState('programming');
+    const [debouncedTerm, setDebouncedTerm] = useState(term);
     const [results, setResults] = useState([]);
 
-    useEffect(() => {
+    useEffect(()=>{
+        const timerId = setTimeout(() => {
+            setDebouncedTerm(term);
+        }, 500);
+
+        return () => {
+            clearTimeout(timerId);
+        }
+
+    }, [term]);
+
+    useEffect(()=>{
         const searchWiki = async () => {
             const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
                 params: {
@@ -21,21 +33,9 @@ const Search = () => {
             setResults(data.query.search);
         }
 
-        if (term && !results.length) {
-            searchWiki();
-        } else {
-            const timeoutId = setTimeout(() => {
-                if (term) {
-                    searchWiki();
-                }
-            }, 500);
-    
-            return () => {
-                clearTimeout(timeoutId);
-            }
-        }
+        searchWiki();
 
-    }, [term]);
+    }, [debouncedTerm]);    
 
     const renderedResult = results.map(result => {
         const regex = /(<([^>]+)>)|(&quot;)/gi //NEW
