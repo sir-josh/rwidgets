@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Dropdown from './components/Dropdown';
 import Convert from './components/Convert';
 
-const APIKEY = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM';
-
 const languageOptions = [
     {
         label: 'Afrikaans',
