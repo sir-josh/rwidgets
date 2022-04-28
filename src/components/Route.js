@@ -20,7 +20,7 @@ const Route = ({ path, children}) => {
 
     },[]);
 
-    return currentPath === path ? children: null;
+    return window.location.pathname === path ? children: null;
 }
 
 export default Route;
