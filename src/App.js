@@ -3,6 +3,7 @@ import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './Translate';
+import Route from './components/Route';
 
 const items = [
     {
@@ -41,8 +42,18 @@ const App = () => {
 
     return (
         <div className='ui container' style={{ marginTop: '15px' }}>
-            {/* <Accordion items={items} /> */}
-            <Translate />
+            <Route path="/">
+                <Accordion items={items} /> 
+            </Route>
+            <Route path="/translate">
+                <Translate items={items} /> 
+            </Route>
+            <Route path="/dropdown">
+                <Dropdown options={options} topLabel={dropdownLabel} selected={selected} onSelectChange={setSelected} /> 
+            </Route>
+            <Route path="/search">
+                <Search  /> 
+            </Route>
         </div>
     )
 }
