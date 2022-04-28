@@ -5,7 +5,7 @@ const Link = ({href, className, children}) => {
         event.preventDefault();
         window.history.pushState({}, '', href);
 
-        //Setup an event to tell each navigation link (on Navigation component) to listen for when the URL changes
+        //Setup an event to tell each navigation link (on Route component) to listen for when the URL changes
         const navEvent = new PopStateEvent('popstate');
         window.dispatchEvent(navEvent);
     }
