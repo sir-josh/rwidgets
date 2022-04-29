@@ -12,7 +12,7 @@ const Convert = ({language, text}) => {
       },500);
     
       return () => {
-        clearTimeout(textTimeOut)
+        clearTimeout(textTimeOut);
       }
     }, [text]);
 
