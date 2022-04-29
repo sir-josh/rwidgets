@@ -17,10 +17,11 @@ const Route = ({ path, children}) => {
         return () => {
             window.removeEventListener('popstate', onPathnameChange);
         }
-
+        //es-lint-disable-next-line
     },[]);
 
-    return window.location.pathname === path ? children: null;
+    // return window.location.pathname === path ? children: null; or use the next-line to escape react warnings
+    return currentPath === path ? children : null;
 }
 
 export default Route;
