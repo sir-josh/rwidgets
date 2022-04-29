@@ -6,28 +6,31 @@ const languageOptions = [
     {
         label: 'Afrikaans',
         value: 'af'
-    },
-    {
+    },{
         label: 'Arabic',
         value: 'ar'
-    },
-    {
+    },{
         label: 'Hindi',
         value: 'hi'
-    },
-    {
+    },{
         label: 'French',
         value: 'fr'
-    },
-    {
+    },{
         label: 'German',
         value: 'de'
-    },
-    {
+    },{
         label: 'Chinese(Simplified)',
         value: 'zh-CN'
+    },{
+        label: 'Yoruba',
+        value: 'yo'
+    },{
+        label: 'Spanish',
+        value: 'es'
+    },{
+        label: 'Igbo',
+        value: 'ig'
     }
-
 ];
 
 const Translate = () => {
